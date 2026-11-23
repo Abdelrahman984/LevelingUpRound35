@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class Task01DuckDuckGoTitleTest extends BaseTest {
     @Test
-    public void verifyDuckDuckGoPageTitle(){
+    public void verifyDuckDuckGoPageTitle() {
         driver.get("https://duckduckgo.com/");
         var title = driver.getTitle();
         Assert.assertEquals(title, "Google");
