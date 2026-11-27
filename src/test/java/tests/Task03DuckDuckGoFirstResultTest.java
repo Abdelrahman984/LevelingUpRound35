@@ -5,22 +5,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
 public class Task03DuckDuckGoFirstResultTest extends BaseTest {
     @Test
-    public void VerifyDuckDuckGoFirstResultTest() {
+    public void verifyDuckDuckGoFirstResultTest() {
         driver.get("https://duckduckgo.com/");
         WebElement searchInput = driver.findElement(By.cssSelector("textarea[name='q']"));
         searchInput.clear();
-        searchInput.sendKeys("Selenium WebDriver");
-        searchInput.sendKeys(Keys.ENTER);
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        searchInput.sendKeys("Selenium WebDriver", Keys.ENTER);
 
         String expectedUrl = "https://www.selenium.dev/documentation/webdriver/";
         WebElement firstResultLink = wait.until(
